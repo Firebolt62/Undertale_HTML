@@ -28,10 +28,15 @@
         color: white;
         font-family: 'Determination';
       }
+      .center-row {
+        display: flex;
+        justify-content: center;   /* centers horizontally */
+      }
+
       .center-image {
         display: block;
-        margin: 1em auto; /* adds a bit of spacing */
-        text-align: center; /* not needed for block but harmless */
+        margin: 1em 0;
+        float: none;
       }
     </style>
   </head>
@@ -55,7 +60,7 @@
     </h3>
     <p>&nbsp;</p>
     <h2>Bad Time Simulator</h2>
-    <div>
+    <div class="center-row">
       <img
         src="https://slm-assets.secondlife.com/assets/13910104/lightbox/maxresdefault.jpg?1461089042"
         alt="bad time sim"
@@ -102,3 +107,4 @@
     </ul>
   </body>
 </html>
+
