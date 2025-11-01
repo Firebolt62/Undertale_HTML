@@ -1,3 +1,3 @@
 Hey!! If you're viewing this is a project that I made for school. Status=unfinished
-Dev:
+Devs:
   Firebolt62, Lighc
