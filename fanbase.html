@@ -1,28 +1,49 @@
 <!DOCTYPE html>
 <html>
-  <title>UNDERTALE</title>
-  <style>
-    body {
-      background-color: #070620;
-    }
+  <head>
+    <title>UNDERTALE</title>
+    <style>
+      @font-face {
+        font-family: Determination;
+        src: url(DTM-Sans.otf);
+      }
+      body {
+        background-color: #070620;
+      }
 
-    h1 {
-      color: white;
-      font-family:'Courier New', Courier, monospace;
-    }
-    h2 {
-      color: white;
-      font-family: 'Courier New', Courier, monospace;
-    }
-    h3 {
-      color: white;
-      font-family: 'Courier New', Courier, monospace;
-    }
-    p {
-      color: white;
-      font-family: 'Courier New', Courier, monospace;
-    }
-  </style>
+      h1 {
+        color: white;
+        font-family:'Determination';
+      }
+      h2 {
+        color: white;
+        font-family: 'Determination';
+        text-align: center;
+      }
+      h3 {
+        color: white;
+        font-family: 'Determination';
+      }
+      p {
+        color: white;
+        font-family: 'Determination';
+      }
+      li {
+        color: white;
+        font-family: 'Determination'
+      }
+      .center-row {
+        display: flex;
+        justify-content: center;   /* centers horizontally */
+      }
+
+      .center-image {
+        display: block;
+        margin: 1em 0;
+        float: none;
+      }
+    </style>
+  </head>
   <body>
     <h1 style="text-align: left">
       <a href="index.html"
@@ -44,12 +65,15 @@
     </h3>
     <p>&nbsp;</p>
     <h2>Bad Time Simulator</h2>
-    <img
-      src="https://slm-assets.secondlife.com/assets/13910104/lightbox/maxresdefault.jpg?1461089042"
-      alt="bad time sim"
-      width="400"
-      height="230"
-    />
+    <div class="center-row">
+      <img
+        src="https://slm-assets.secondlife.com/assets/13910104/lightbox/maxresdefault.jpg?1461089042"
+        alt="bad time sim"
+        width="400"
+        height="230"
+        class="center-image"
+      />
+    </div>
     <p>
       Bad Time Simulator is an emulator that can be played on your web browser
       with a keyboard. It emulates one of the most iconic fights in Undertale,
@@ -59,12 +83,17 @@
     </p>
     <p>&nbsp;</p>
     <h2>Flowey's Time Machine</h2>
+    <div class="center-row">
     <img
-      src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQmIis1prHthRjhPa99Gzbj1jQjVRdD8-8RAA&s"
-      alt="flowey's time machine"
-      width="290"
-      height="230"
-    />
+    <div class="center-row">
+      <img
+        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQmIis1prHthRjhPa99Gzbj1jQjVRdD8-8RAA&s"
+        alt="flowey's time machine"
+        width="290"
+        height="230"
+        class="center-image"
+      />
+    </div>
     <p>
       Flowey's Time Machine is an unofficial save editor for Undertale. You can
       change multiple aspects of your save file and even generate new ones. The
@@ -73,20 +102,24 @@
     </p>
     <p>&nbsp;</p>
     <h2>Undertale mods</h2>
-    <img
-      src="https://i.redd.it/cisd1u06e3t11.png"
-      alt="undertale mods"
-      width="300"
-      height="225"
-    />
-    <p>
-      The community has created a variety of mods for Undertale that change the
-      game in their own ways. Some of my favourite ones are:
-      <ul>
-        <li> <a href="https://landimizer.itch.io/ut-connect">Undertale Connect</a> This is a online multplayer mod that works through Steam.
-        <li> <a href="https://www.moddb.com/mods/na29410/downloads/na134952">Colored Sprites</a> This mod adds color to the original black and white sprites. It adds a nice touch.
-        <li> <a href="https://www.romhacking.net/utilities/704">Delta Patcher</a> This is not really a mod, but a tool to help install them.
-      </ul>
-    </p>
+    <div class="center-row">
+      <img
+        src="https://i.redd.it/cisd1u06e3t11.png"
+        alt="undertale mods"
+        width="300"
+        height="225"
+        class="center-image"
+      />
+    </div>
+    <ul>
+      <li><a href="https://landimizer.itch.io/ut-connect">Undertale Connect</a> - This is a online multplayer mod that works through Steam.</li>
+      <li><a href="https://www.moddb.com/mods/na29410/downloads/na134952">Colored Sprites</a> - This mod adds color to the original black and white sprites. It adds a nice touch.</li>
+      <li><a href="https://www.romhacking.net/utilities/704">Delta Patcher</a> - This is not really a mod, but a tool to help install them.</li>
+    </ul>
   </body>
 </html>
+
+
+
+
+
