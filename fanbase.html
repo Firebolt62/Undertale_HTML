@@ -28,14 +28,10 @@
         color: white;
         font-family: 'Determination';
       }
-      li {
-        color: white;
-        font-family: 'Determination';
-      }
       .center-image {
         display: block;
-        margin-left: auto;
-        margin-right: auto;
+        margin: 1em auto; /* adds a bit of spacing */
+        text-align: center; /* not needed for block but harmless */
       }
     </style>
   </head>
@@ -59,13 +55,15 @@
     </h3>
     <p>&nbsp;</p>
     <h2>Bad Time Simulator</h2>
-    <img
-      src="https://slm-assets.secondlife.com/assets/13910104/lightbox/maxresdefault.jpg?1461089042"
-      alt="bad time sim"
-      width="400"
-      height="230"
-      class="center-image"
-    />
+    <div>
+      <img
+        src="https://slm-assets.secondlife.com/assets/13910104/lightbox/maxresdefault.jpg?1461089042"
+        alt="bad time sim"
+        width="400"
+        height="230"
+        class="center-image"
+      />
+    </div>
     <p>
       Bad Time Simulator is an emulator that can be played on your web browser
       with a keyboard. It emulates one of the most iconic fights in Undertale,
@@ -104,6 +102,3 @@
     </ul>
   </body>
 </html>
-
-
-
