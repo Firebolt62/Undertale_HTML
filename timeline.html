@@ -1,147 +1,173 @@
-<html>
-	<head>
-		<link rel="icon" type="image/png" href="Firebolt62.png">
-    	<title>UNDERTALE</title>
-	</head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Timeline Fixed</title>
+<style>
+@font-face {
+    font-family: Determination;
+   	src: url(DTM-Sans.otf);
+}
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: system-ui;
+  flex-direction: column;
+  color: #007fff;
+  background: #070620;
+  margin: 0;
+  padding: 0;
+}
+h2 {
+  font-size: 1.5em;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-family: 'Determination';
+}
+#timeline {
+  list-style: none;
+  padding-left: 30px;
+  width: 300px;
+  border-left: 8px solid #007fff;
+  margin-left: 9px;
+}
+#timeline li {
+  margin: 40px 0;
+  position: relative;
+}
+#timeline p {
+  margin: 0 0 15px;
+}
+.date {
+  margin-top: -10px;
+  top: 50%;
+  left: -158px;
+  font-size: 0.95em;
+  line-height: 20px;
+  position: absolute;
+  color: #007fff;
+  font-family: 'Determination';
+}
+.circle {
+  margin-top: -10px;
+  top: 50%;
+  left: -44px;
+  width: 10px;
+  height: 10px;
+  background: white;
+  border: 5px solid #ff005a;
+  border-radius: 50%;
+  display: block;
+  position: absolute;
+}
+.content {
+  position: relative;
+  margin-left: 60px;
+  padding: 15px 20px;
+  background: #0d082f;
+  border: 2px solid transparent;
+  border-radius: 10px;
+  max-width: 240px;
+  transition: all 0.4s ease;
+  opacity: 0;
+  transform: translateX(-10px);
+}
+.content p {
+  margin: 0;
+  color: #ff005a;
+  font-size: 0.9em;
+  line-height: 1.4em;
+  transition: color 0.3s;
+  font-family: 'Determination';
+}
 
-	<style>
-		@font-face {
-    		font-family: Determination;
-   	 		src: url(DTM-Sans.otf);
-		}
-		body {
-		  display: flex;
-		  justify-content: center;
-		  align-items: center;
-		  font-family: system-ui;
-		  flex-direction: column;
-		  color: #007fff;
-		  background: #070620;
-		}
-		h2 {
-		  font-size: 1.5em;
-		  letter-spacing: 2px;
-		  text-transform: uppercase;
-		}
-		#timeline {
-		  list-style: none;
-		  padding-left: 30px;
-		  width: 300px;
-		  border-left: 8px solid #007fff;
-		  margin-left: 9px;
-		}
-		#timeline li {
-		  margin: 40px 0;
-		  position: relative;
-		}
-		#timeline p {
-		  margin: 0 0 15px;
-		}
-		.date {
-		  margin-top: -10px;
-		  top: 50%;
-		  left: -158px;
-		  font-size: 0.95em;
-		  line-height: 20px;
-		  position: absolute;
-		  color: #007fff;
-		}
-		.circle {
-		  margin-top: -10px;
-		  top: 50%;
-		  left: -44px;
-		  width: 10px;
-		  height: 10px;
-		  background: white;
-		  border: 5px solid #ff005a;
-		  border-radius: 50%;
-		  display: block;
-		  position: absolute;
-		}
-		.content {
-		  position: relative;
-		  margin-left: 60px;
-		  padding: 15px 20px;
-		  background: #0d082f;
-		  border: 2px solid transparent;
-		  border-radius: 10px;
-		  max-width: 240px;
-		  transition: all 0.4s ease;
-		  opacity: 0;
-		  transform: translateX(-10px);
-		}
-		.content p {
-		  margin: 0;
-		  color: #ff005a;
-		  font-size: 0.9em;
-		  line-height: 1.4em;
-		  transition: color 0.3s;
-		}
-		
-		.content::before {
-		  content: "";
-		  position: absolute;
-		  left: -14px;
-		  top: 22px;
-		  border-width: 8px;
-		  border-style: solid;
-		  border-color: transparent #ff005a transparent transparent;
-		  transform: translateX(-100%);
-		}
-		
-		label {
-		  font-size: 1.3em;
-		  position: relative;
-		  cursor: pointer;
-		  transition: transform 0.2s linear;
-		}
-		
-		.radio {
-		  display: none;
-		}
-				
-		.radio:checked + .relative label {
-		  cursor: auto;
-		  transform: translateX(10px);
-		  color: #ff005a;
-		}
-		
-		.radio:checked + .relative .circle {
-		  background: #ff005a;
-		}
-		
-		.radio:checked ~ .content {
-		  border-color: #ff005a;
-		  background: #0d082f;
-		  opacity: 1;
-		  transform: translateX(0);
-		  box-shadow: 0 0 10px #ff005a33;
-		}
-		
-		
-		.radio:checked ~ .content p {
-		  max-height: 200px;
-		  color: #ff005a;
-		}
-		
-		.radio:checked ~ .content::before {
-		  opacity: 1;
-		}
-		</style>
+.content::before {
+  content: "";
+  position: absolute;
+  left: -14px;
+  top: 22px;
+  border-width: 8px;
+  border-style: solid;
+  border-color: transparent #ff005a transparent transparent;
+  transform: translateX(-100%);
+}
+
+label {
+  font-size: 1.3em;
+  position: relative;
+  cursor: pointer;
+  transition: transform 0.2s linear;
+  font-family: 'Determination';
+}
+
+.radio {
+  display: none;
+  font-family: 'Determination';
+}
+
+/* Checked state effects */
+.radio:checked + .relative label {
+  cursor: auto;
+  transform: translateX(10px);
+  color: #ff005a;
+}
+
+.radio:checked + .relative .circle {
+  background: #ff005a;
+}
+
+.radio:checked ~ .content {
+  border-color: #ff005a;
+  background: #0d082f;
+  opacity: 1;
+  transform: translateX(0);
+  box-shadow: 0 0 10px #ff005a33;
+}
+
+
+.radio:checked ~ .content p {
+  max-height: 200px;
+  color: #ff005a;
+}
+
+.radio:checked ~ .content::before {
+  opacity: 1;
+}
+nav { 
+		background-color: #1f1f1f;
+		padding: 1rem 2rem; 
+	    display: flex;
+		justify-content: space-between;
+		align-items: center;
+		font-family: 'Determination';
+}
+nav a { 
+		color: white;
+		text-decoration: none;
+		margin-left: 1.5rem;
+		font-weight: 600;
+		font-family: 'Determination';
+}
+nav a:hover { 
+	opacity: 0.7;
+}
+</style>
+</head>
 <body>
+<nav>
+    <div style="color:white;font-weight:bold;">UNDERTALE</div>
+    <div>
+      	<a href='index.html'>Home</a>
+		<a href='fanbase.html'>Fanbase</a>
+      	<a href='info.html'>Information</a>
+      	<a href='https://undertale.com' target="_blank">Official Website</a>
+      	<a href='copyright.html'>Copyright</a>
+		<a href='timeline.html'>History of the Game</a>
+    </div>
+</nav>
 
-	<nav>
-    	<div style="color:white;font-weight:bold;">UNDERTALE</div>
-    	<div>
-      		<a href='index.html'>Home</a>
-			<a href='fanbase.html'>Fanbase</a>
-      		<a href='info.html'>Information</a>
-      		<a href='https://undertale.com' target="_blank">Official Website</a>
-      		<a href='copyright.html'>Copyright</a>
-            <a href='timeline.html'>History of the Game</a>
-    	</div>
-  	</nav>
-	
 <h2>Timeline Fixed</h2>
 
 <ul id="timeline">
@@ -205,6 +231,5 @@
     </div>
   </li>
 </ul>
-
-	</body>
+</body>
 </html>
