@@ -52,6 +52,7 @@ h2 {
   position: absolute;
   color: #007fff;
   font-family: 'Determination';
+	
 }
 .circle {
   margin-top: -10px;
@@ -65,6 +66,68 @@ h2 {
   display: block;
   position: absolute;
 }
+	
+nav {
+  width: 100%;
+  background-color: #1f1f1f;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+}
+nav a { 
+		color: white;
+		text-decoration: none;
+		margin-left: 1.5rem;
+		font-weight: 600;
+		font-family: 'Determination';
+}
+nav a:hover { 
+	opacity: 0.7;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-family: system-ui;
+  color: #007fff;
+  background: #070620;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  text-align: center;
+}
+
+h2 {
+  font-size: 1.5em;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-family: 'Determination';
+  margin-bottom: 20px;
+}
+
+
+#timeline {
+  list-style: none;
+  padding-left: 30px;
+  width: 300px;
+  border-left: 8px solid #007fff;
+  margin-left: 9px;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+#timeline li {
+  margin: 40px 0;
+  position: relative;
+}
+	
 .content {
   position: relative;
   margin-left: 60px;
@@ -76,14 +139,6 @@ h2 {
   transition: all 0.4s ease;
   opacity: 0;
   transform: translateX(-10px);
-}
-.content p {
-  margin: 0;
-  color: #ff005a;
-  font-size: 0.9em;
-  line-height: 1.4em;
-  transition: color 0.3s;
-  font-family: 'Determination';
 }
 
 .content::before {
@@ -107,10 +162,8 @@ label {
 
 .radio {
   display: none;
-  font-family: 'Determination';
 }
 
-/* Checked state effects */
 .radio:checked + .relative label {
   cursor: auto;
   transform: translateX(10px);
@@ -129,7 +182,6 @@ label {
   box-shadow: 0 0 10px #ff005a33;
 }
 
-
 .radio:checked ~ .content p {
   max-height: 200px;
   color: #ff005a;
@@ -138,25 +190,29 @@ label {
 .radio:checked ~ .content::before {
   opacity: 1;
 }
+
 nav {
   width: 100%;
   background-color: #1f1f1f;
   padding: 1rem 2rem;
   display: flex;
-  justify-content: space-between;
+  justify-content: center; /* Center the navigation links */
   align-items: center;
   box-sizing: border-box;
 }
-nav a { 
-		color: white;
-		text-decoration: none;
-		margin-left: 1.5rem;
-		font-weight: 600;
-		font-family: 'Determination';
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin-left: 1.5rem;
+  font-weight: 600;
+  font-family: 'Determination';
 }
-nav a:hover { 
-	opacity: 0.7;
+
+nav a:hover {
+  opacity: 0.7;
 }
+
 </style>
 </head>
 <body>
