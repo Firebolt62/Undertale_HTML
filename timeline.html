@@ -10,60 +10,126 @@
    	 		src: url(DTM-Sans.otf);
 		}
 		body {
-			background-color: #070620;
-			margin: 0;
-      		padding: 0;
-			display: flex;
-			justify-content: center;
-			align-items: center;
-			font-family: 'Determination';
-			flex-direction: column;
-			color: #007fff;
-		}
-		h1 {
-			color: white;
-			font-family: 'Determination';
+		  display: flex;
+		  justify-content: center;
+		  align-items: center;
+		  font-family: system-ui;
+		  flex-direction: column;
+		  color: #007fff;
+		  background: #070620;
 		}
 		h2 {
-			color: white;
-			font-family: 'Determination';
-			font-size: 1.5em;
-			letter-spacing: 2px;
-			text-transform: uppercase;
+		  font-size: 1.5em;
+		  letter-spacing: 2px;
+		  text-transform: uppercase;
 		}
-		}
-		nav { 
-		      background-color: #1f1f1f;
-		      padding: 1rem 2rem; display: flex;
-		      justify-content: space-between;
-		      align-items: center;
-			  font-family: 'Determination';
-		}
-	    nav a { 
-		      color: white;
-		      text-decoration: none;
-		      margin-left: 1.5rem;
-		      font-weight: 600;
-			  font-family: 'Determination';
-	    }
-	    nav a:hover { 
-	      opacity: 0.7;
-	    }
 		#timeline {
-			list-style: none;
-			padding-left: 30px;
-			width: 300px;
-			border-left: 8px solid #007fff;
-			margin-left: 9%;
+		  list-style: none;
+		  padding-left: 30px;
+		  width: 300px;
+		  border-left: 8px solid #007fff;
+		  margin-left: 9px;
 		}
 		#timeline li {
-			margin: 40px 0;
-			position: relative;
+		  margin: 40px 0;
+		  position: relative;
 		}
 		#timeline p {
-			margin: 0 0 15px;
+		  margin: 0 0 15px;
 		}
-	</style>
+		.date {
+		  margin-top: -10px;
+		  top: 50%;
+		  left: -158px;
+		  font-size: 0.95em;
+		  line-height: 20px;
+		  position: absolute;
+		  color: #007fff;
+		}
+		.circle {
+		  margin-top: -10px;
+		  top: 50%;
+		  left: -44px;
+		  width: 10px;
+		  height: 10px;
+		  background: white;
+		  border: 5px solid #ff005a;
+		  border-radius: 50%;
+		  display: block;
+		  position: absolute;
+		}
+		.content {
+		  position: relative;
+		  margin-left: 60px;
+		  padding: 15px 20px;
+		  background: #0d082f;
+		  border: 2px solid transparent;
+		  border-radius: 10px;
+		  max-width: 240px;
+		  transition: all 0.4s ease;
+		  opacity: 0;
+		  transform: translateX(-10px);
+		}
+		.content p {
+		  margin: 0;
+		  color: #ff005a;
+		  font-size: 0.9em;
+		  line-height: 1.4em;
+		  transition: color 0.3s;
+		}
+		
+		.content::before {
+		  content: "";
+		  position: absolute;
+		  left: -14px;
+		  top: 22px;
+		  border-width: 8px;
+		  border-style: solid;
+		  border-color: transparent #ff005a transparent transparent;
+		  transform: translateX(-100%);
+		}
+		
+		label {
+		  font-size: 1.3em;
+		  position: relative;
+		  cursor: pointer;
+		  transition: transform 0.2s linear;
+		}
+		
+		.radio {
+		  display: none;
+		}
+				
+		.radio:checked + .relative label {
+		  cursor: auto;
+		  transform: translateX(10px);
+		  color: #ff005a;
+		}
+		
+		.radio:checked + .relative .circle {
+		  background: #ff005a;
+		}
+		
+		.radio:checked ~ .content {
+		  border-color: #ff005a;
+		  background: #0d082f;
+		  opacity: 1;
+		  transform: translateX(0);
+		  box-shadow: 0 0 10px #ff005a33;
+		}
+		
+		
+		.radio:checked ~ .content p {
+		  max-height: 200px;
+		  color: #ff005a;
+		}
+		
+		.radio:checked ~ .content::before {
+		  opacity: 1;
+		}
+		</style>
+<body>
+
 	<nav>
     	<div style="color:white;font-weight:bold;">UNDERTALE</div>
     	<div>
@@ -75,6 +141,70 @@
             <a href='timeline.html'>History of the Game</a>
     	</div>
   	</nav>
-	<body>
+	
+<h2>Timeline Fixed</h2>
+
+<ul id="timeline">
+  <li class="work">
+    <input type="radio" class="radio" id="work5" name="works" checked>
+    <div class="relative">
+      <label for="work5">Blah Blahaj</label>
+      <span class="date">1000 BC</span>
+      <span class="circle"></span>
+    </div>
+    <div class="content">
+      <p>Blah blah blah</p>
+    </div>
+  </li>
+
+  <li class="work">
+    <input type="radio" class="radio" id="work4" name="works">
+    <div class="relative">
+      <label for="work4">Blah Blahaj</label>
+      <span class="date">900 BC</span>
+      <span class="circle"></span>
+    </div>
+    <div class="content">
+      <p>Blah blah blah</p>
+    </div>
+  </li>
+
+  <li class="work">
+    <input type="radio" class="radio" id="work3" name="works">
+    <div class="relative">
+      <label for="work3">Blah Blahaj</label>
+      <span class="date">800 BC</span>
+      <span class="circle"></span>
+    </div>
+    <div class="content">
+      <p>Blah blah blah</p>
+    </div>
+  </li>
+
+  <li class="work">
+    <input type="radio" class="radio" id="work2" name="works">
+    <div class="relative">
+      <label for="work2">Blah Blahaj</label>
+      <span class="date">700 BC</span>
+      <span class="circle"></span>
+    </div>
+    <div class="content">
+      <p>Blah blah blah</p>
+    </div>
+  </li>
+
+  <li class="work">
+    <input type="radio" class="radio" id="work1" name="works">
+    <div class="relative">
+      <label for="work1">Blah Blahaj</label>
+      <span class="date">600 BC</span>
+      <span class="circle"></span>
+    </div>
+    <div class="content">
+      <p>Blah blah blah</p>
+    </div>
+  </li>
+</ul>
+
 	</body>
 </html>
