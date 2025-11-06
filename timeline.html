@@ -8,183 +8,158 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	
 <style>
-@font-face {
-    font-family: Determination;
-   	src: url(DTM-Sans.otf);
-}
-	
-.date {
-  margin-top: -10px;
-  top: 50%;
-  left: -158px;
-  font-size: 0.95em;
-  line-height: 20px;
-  position: absolute;
-  color: #007fff;
-  font-family: 'Determination';
-	
-}
-.circle {
-  margin-top: -10px;
-  top: 50%;
-  left: -44px;
-  width: 10px;
-  height: 10px;
-  background: white;
-  border: 5px solid #ff005a;
-  border-radius: 50%;
-  display: block;
-  position: absolute;
-}
-	
-nav {
-  width: 100%;
-  background-color: #1f1f1f;
-  padding: 1rem 2rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  box-sizing: border-box;
-}
-nav a { 
-		color: white;
-		text-decoration: none;
-		margin-left: 1.5rem;
-		font-weight: 600;
-		font-family: 'Determination';
-}
-nav a:hover { 
-	opacity: 0.7;
-}
+		@font-face {
+		    font-family: Determination;
+		   	src: url(DTM-Sans.otf);
+		}
+			
+		.date {
+		  margin-top: -10px;
+		  top: 50%;
+		  left: -158px;
+		  font-size: 0.95em;
+		  line-height: 20px;
+		  position: absolute;
+		  color: #007fff;
+		  font-family: 'Determination';
+			
+		}
+		.circle {
+		  margin-top: -10px;
+		  top: 50%;
+		  left: -44px;
+		  width: 10px;
+		  height: 10px;
+		  background: white;
+		  border: 5px solid #ff005a;
+		  border-radius: 50%;
+		  display: block;
+		  position: absolute;
+		}
+		
+		body {
+		  display: flex;
+		  justify-content: center;
+		  align-items: center;
+		  flex-direction: column;
+		  font-family: system-ui;
+		  color: #007fff;
+		  background: #070620;
+		  margin: 0;
+		  padding: 0;
+		  height: 100vh;
+		  text-align: center;
+		}
+		
+		h2 {
+		  font-size: 1.5em;
+		  letter-spacing: 2px;
+		  text-transform: uppercase;
+		  font-family: 'Determination';
+		  margin-bottom: 20px;
+		}
+		
+		
+		#timeline {
+		  list-style: none;
+		  padding-left: 30px;
+		  width: 300px;
+		  border-left: 8px solid #007fff;
+		  margin: 0 auto
+		  margin-top: 20px;
+		}
+		
+		#timeline li {
+		  margin: 40px 0;
+		  position: relative;
+		}
+		
+		.content {
+		  position: relative;
+		  margin-left: 60px;
+		  padding: 15px 20px;
+		  background: #0d082f;
+		  border: 2px solid transparent;
+		  border-radius: 10px;
+		  max-width: 240px;
+		  transition: all 0.4s ease;
+		  opacity: 0;
+		  transform: translateX(-10px);
+		}
+		
+		.content::before {
+		  content: "";
+		  position: absolute;
+		  left: -14px;
+		  top: 22px;
+		  border-width: 8px;
+		  border-style: solid;
+		  border-color: transparent #ff005a transparent transparent;
+		  transform: translateX(-100%);
+		}
+		
+		label {
+		  font-size: 1.3em;
+		  position: relative;
+		  cursor: pointer;
+		  transition: transform 0.2s linear;
+		  font-family: 'Determination';
+		}
+		
+		.radio {
+		  display: none;
+		}
+		
+		.radio:checked + .relative label {
+		  cursor: auto;
+		  transform: translateX(10px);
+		  color: #ff005a;
+		}
+		
+		.radio:checked + .relative .circle {
+		  background: #ff005a;
+		}
+		
+		.radio:checked ~ .content {
+		  border-color: #ff005a;
+		  background: #0d082f;
+		  opacity: 1;
+		  transform: translateX(0);
+		  box-shadow: 0 0 10px #ff005a33;
+		}
+		
+		.radio:checked ~ .content p {
+		  max-height: 200px;
+		  color: #ff005a;
+		}
+		
+		.radio:checked ~ .content::before {
+		  opacity: 1;
+		}
+		
+		nav {
+		  width: 100%;
+		  background-color: #1f1f1f;
+		  padding: 1rem 2rem;
+		  display: flex;
+		  justify-content: center;
+		  align-items: center;
+		  box-sizing: border-box;
+		}
+		
+		nav a {
+		  color: white;
+		  text-decoration: none;
+		  margin-left: 1.5rem;
+		  font-weight: 600;
+		  font-family: 'Determination';
+		}
+		
+		nav a:hover {
+		  opacity: 0.7;
+		}
 
-body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  font-family: system-ui;
-  color: #007fff;
-  background: #070620;
-  margin: 0;
-  padding: 0;
-  height: 100vh;
-  text-align: center;
-}
-
-h2 {
-  font-size: 1.5em;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  font-family: 'Determination';
-  margin-bottom: 20px;
-}
-
-
-#timeline {
-  list-style: none;
-  padding-left: 30px;
-  width: 300px;
-  border-left: 8px solid #007fff;
-  margin-left: 9px;
-  margin-top: 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-
-#timeline li {
-  margin: 40px 0;
-  position: relative;
-}
-	
-.content {
-  position: relative;
-  margin-left: 60px;
-  padding: 15px 20px;
-  background: #0d082f;
-  border: 2px solid transparent;
-  border-radius: 10px;
-  max-width: 240px;
-  transition: all 0.4s ease;
-  opacity: 0;
-  transform: translateX(-10px);
-}
-
-.content::before {
-  content: "";
-  position: absolute;
-  left: -14px;
-  top: 22px;
-  border-width: 8px;
-  border-style: solid;
-  border-color: transparent #ff005a transparent transparent;
-  transform: translateX(-100%);
-}
-
-label {
-  font-size: 1.3em;
-  position: relative;
-  cursor: pointer;
-  transition: transform 0.2s linear;
-  font-family: 'Determination';
-}
-
-.radio {
-  display: none;
-}
-
-.radio:checked + .relative label {
-  cursor: auto;
-  transform: translateX(10px);
-  color: #ff005a;
-}
-
-.radio:checked + .relative .circle {
-  background: #ff005a;
-}
-
-.radio:checked ~ .content {
-  border-color: #ff005a;
-  background: #0d082f;
-  opacity: 1;
-  transform: translateX(0);
-  box-shadow: 0 0 10px #ff005a33;
-}
-
-.radio:checked ~ .content p {
-  max-height: 200px;
-  color: #ff005a;
-}
-
-.radio:checked ~ .content::before {
-  opacity: 1;
-}
-
-nav {
-  width: 100%;
-  background-color: #1f1f1f;
-  padding: 1rem 2rem;
-  display: flex;
-  justify-content: center; /* Center the navigation links */
-  align-items: center;
-  box-sizing: border-box;
-}
-
-nav a {
-  color: white;
-  text-decoration: none;
-  margin-left: 1.5rem;
-  font-weight: 600;
-  font-family: 'Determination';
-}
-
-nav a:hover {
-  opacity: 0.7;
-}
-
-</style>
-</head>
+	</style>
 <body>
 	<nav>
     	<div style="color:white;font-weight:bold;">UNDERTALE</div>
