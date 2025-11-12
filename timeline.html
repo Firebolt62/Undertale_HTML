@@ -38,17 +38,19 @@
 		}
 		
 		body {
-		  display: flex;
-		  justify-content: center;
-		  align-items: center;
-		  flex-direction: column;
-		  color: #007fff;
-		  background: #070620;
-		  margin: 0;
-		  padding: 0;
-		  height: 100%;
-		  text-align: center;
-		}
+      margin: 0;
+      padding: 0;
+  background: #070620;
+  color: #007fff;
+  text-align: center;
+  font-family: 'Determination';
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* instead of center */
+  align-items: center;
+}
+
 		
 		h2 {
 		  font-size: 1.5em;
@@ -56,6 +58,7 @@
 		  text-transform: uppercase;
 		  font-family: 'Determination';
 		  margin-bottom: 20px;
+      margin: 10px 0 8px;
 		}
 		
 		
@@ -66,6 +69,7 @@
 		  border-left: 8px solid #007fff;
 		  margin: 0 auto;
 		  margin-top: 20px;
+      margin-top: 0;
 		}
 		
 		#timeline li {
@@ -85,10 +89,17 @@
 		  opacity: 0;
 		  transform: translateX(-10px);
 		  word-wrap: break-word;
-          overflow-wrap: break-word;
-          white-space: normal;
-          box-sizing: border-box;
+      overflow-wrap: anywhere;
+      white-space: normal;
+      box-sizing: border-box;
+      box-sizing: border-box;
+      max-width: 280px;
+      overflow-wrap: break-word;
+      word-break: break-word;
+      overflow: hidden;
 		}
+    .content > * { margin: 0; } 
+    .content > * + * { margin-top: 0.75rem; }
 		
 		.content::before {
 		  content: "";
@@ -132,7 +143,7 @@
 		}
 		
 		.radio:checked ~ .content p {
-		  max-height: 200px;
+		  max-height: none;
 		  color: #ff005a;
 		}
 		
