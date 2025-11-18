@@ -1,4 +1,4 @@
-Hey!! If you for some reason stumbled upon this, you're a teacher grading this, or your degenerate friend sent you this, welcome! This is a project I made for school. Status: finished (More changes however could come in the future).
+Hey!! If you for some reason stumbled upon this, you're a teacher grading this, or your degenerate friend sent you this, to you I say welcome! This is a project I and a friend made for school. Status: finished (More changes however could come in the future).
 
 The people who worked on this were: Firebolt62 (me) and Lighc.
 
